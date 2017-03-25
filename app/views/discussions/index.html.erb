@@ -6,8 +6,12 @@
  
 
 <div class="container">
+  
+  <% if user_signed_in? %>
   <button type="button" class="btn btn-primary pull-right">
     <%= link_to 'New Discussion', new_discussion_path %></button>
+    <% else %>
+<% end %>
 </div>
 
 
@@ -26,6 +30,8 @@
       </tr>
     </thead>
     <tbody>
+
+      
       <% @discussions.each do |discussion| %>
       <tr>
         <td class="text-center"><i class="fa fa-question fa-2x text-primary"></i></td>
@@ -37,7 +43,9 @@
         <td class="text-center hidden-xs hidden-sm">by <%= discussion.user.email %><br><small></small></td>
         
         </h4> 
-<% end %>        
+<% end %>
+
+
         </td>
       
        

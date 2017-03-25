@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   
-
+  
   resources :evidences
   devise_for :users
-    root to: "devise/sessions#new"
+  devise_scope :user do
+    
+  end
+  #get "login", to: "devise/sessions#new"
+  #get "/users/sign_up", to: "devise/registrations#new"
+  #get '/users/sign_out' => 'devise/sessions#destroy'
+  
   
   resources :discussions do
     resources :comments
@@ -13,6 +19,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  root 'home#index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
