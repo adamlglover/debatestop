@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @evidence.name %>
+</p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @evidence.tag %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @evidence.description %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @evidence.date %>
+</p>
+
+<p>
+  <button><%= link_to "Download File", @evidence.document_url %></button>
+  
+</p>
+
+<%= link_to 'Edit', edit_evidence_path(@evidence) %> |
+<%= link_to 'Back', evidences_path %>

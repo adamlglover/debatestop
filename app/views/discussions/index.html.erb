@@ -1,0 +1,47 @@
+<h1>Discussion</h1>
+
+  <p>
+
+  </p>
+ 
+
+<div class="container">
+  <button type="button" class="btn btn-primary pull-right">
+    <%= link_to 'New Discussion', new_discussion_path %></button>
+</div>
+
+
+<div class="container" style="margin-top: 35px">
+
+    
+  <p class="lead">Find debate help strengthing your debate topics while networking with other debaters around the country!</p>
+  <table class="table forum table-striped">
+    <thead>
+      <tr>
+        <th class="cell-stat"></th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Topic</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Number of Posts</th>
+        <th class="cell-stat-2x text-center hidden-xs hidden-sm">Last Post</th>
+        <th class="text-center hidden-xs hidden-sm">Contributer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @discussions.each do |discussion| %>
+      <tr>
+        <td class="text-center"><i class="fa fa-question fa-2x text-primary"></i></td>
+        <td> 
+      
+        <h4> <%= link_to discussion.title, discussion %>   
+        <td class="text-center hidden-xs hidden-sm"><a href="#">9 542</a></td>
+        <td class="text-center hidden-xs hidden-sm"><i class="fa fa-clock-o"></i><%= time_ago_in_words(discussion.created_at) %></td>
+        <td class="text-center hidden-xs hidden-sm">by <%= discussion.user.email %><br><small></small></td>
+        
+        </h4> 
+<% end %>        
+        </td>
+      
+       
+</div>
+</div>
+    
+

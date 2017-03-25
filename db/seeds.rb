@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Evidence.delete_all
+20.times do |p|
+  Evidence.create(
+      name: Faker::Name.first_name, 
+      tag: Faker::Name.first_name, 
+      description: Faker::Name.first_name, 
+      date: Faker::Date.between(2.days.ago, Date.today))
+  end
