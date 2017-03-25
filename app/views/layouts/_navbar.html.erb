@@ -1,20 +1,20 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">DebateStop</a>
+      <a class="navbar-brand" href="/">Debate Space</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active">
         <li><%= link_to "Discussions", discussions_path %></li>
       <li><%= link_to "Evidence", evidences_path %></li>
-      <li><%= link_to "Get Started", new_user_session_path %></li>
       <% if user_signed_in? %>
       <li><%= link_to "Log Out", destroy_user_session_path, method: :delete  %></li>
                                     </ul>
                                   </li>
                                 <% else %>
                                   <li><%= link_to "Sign up", new_user_registration_path  %></li>
-                                  <li><%= link_to "Log in", new_user_session_path  %></li>
+                                  <li><%= link_to "Sign in", new_user_session_path  %></li>
+
                                 <% end %>
     </ul>
     <form class="navbar-form navbar-left">
