@@ -1,15 +1,56 @@
-<%= link_to @discussion.title %><br/>
-<small>Submitted <%= time_ago_in_words(@discussion.created_at) %> ago</small>
+<div class="row">
+    <div class="col-md-3">
+    
+     <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">ghghhgghh<br></h3>
+  </div>
+  <div class="panel-body">
+   hhhhhh
+  </div>
+</div>
+    
+    
+    
+    
+    </div>
+    
+    
+    
+    <div class="col-md-6">
+    
+    <%= link_to @discussion.title %><br/>
+    <small>Submitted <%= time_ago_in_words(@discussion.created_at) %> ago</small>
+    
+    <h3>Comments</h3>
+    
+    <%= form_for [@discussion, Comment.new] do |f| %>
+    <%= f.text_area :body, placeholder: "Add a comment" %><br/>
+    <%= f.submit "Add Comment" %>
+    <% end %>
+    <br>
+    
+        
+      <%= render partial: 'comments/comment', collection: @discussion.comments %>
+ 
+    
+    
+    <%= link_to 'Back', discussions_path %>
+    </div>
 
-<h3>Comments</h3>
+<div class='col-md-3'>
 
-<%= form_for [@discussion, Comment.new] do |f| %>
-<%= f.text_area :body, placeholder: "Add a comment" %><br/>
-<%= f.submit "Add Comment" %>
-<% end %>
+ <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Navigation<br></h3>
+  </div>
+   <ul class="list-group">
+    <li class="list-group-item">Newsfeed</li>
+    <li class="list-group-item">Metrics</li>
+    <li class="list-group-item">Resources</li>
+    <li class="list-group-item">Porta ac consectetur ac</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+  </ul>
 
-<ul>
-  <%= render partial: 'comments/comment', collection: @discussion.comments %>
-</ul>
-
-<%= link_to 'Back', discussions_path %>
+</div>
+</div>

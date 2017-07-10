@@ -11,11 +11,19 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  
+  
+  
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= f.label 'Update Status' %><br></h3>
   </div>
-  <div class="action">
-    <%= f.submit %>
+  <div class="panel-body">
+    <%= f.text_field :title %>
+    <div class="action">
+    <br><%= f.submit %>
   </div>
 <% end %>
+  </div>
+</div>
+  
